@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  auto:
+    build: .
+    image: amos0626/auto
+    container_name: auto
+    ports:
+      - '8080:8080'
+    volumes:
+      - './logs:/root/logs'
+    environment:
+      - JSCH_HOST=127.0.0.1
+      - JSCH_USERNAME=root
+      - JSCH_PASSWORD=root
+      - COMMAND=./update.sh

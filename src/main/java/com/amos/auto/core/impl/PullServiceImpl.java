@@ -14,6 +14,7 @@ import reactor.core.publisher.Mono;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * DESCRIPTION: PullServiceImpl
@@ -45,7 +46,8 @@ public class PullServiceImpl implements PullService {
         LOGGER.debug(">>>>>>>>> 执行命令 [{}] 完成, 执行耗时 [{}] 毫秒", command, (System.currentTimeMillis() - begin));
 
         return execResult
-                .map(strings -> GeneralResponse.ofSuccess(String.join("\n", strings)))
+                .map(list -> GeneralResponse.ofSuccess(
+                        list.stream().collect(Collectors.joining("\n", "", "\n"))))
                 .orElseGet(GeneralResponse::ofFail);
     }
 
