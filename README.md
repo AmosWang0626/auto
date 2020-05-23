@@ -14,7 +14,7 @@
 - Docker :whale2:
 
 ## 直接使用
-镜像已 push 到 docker 仓库 [amos0626/auto](https://hub.docker.com/repository/docker/amos0626/auto)
+镜像已 push 到 docker 仓库 [amos0626/auto](https://hub.docker.com/r/amos0626/auto)
 
 1. 创建一个 `docker-compose.yml`
     ```yaml
